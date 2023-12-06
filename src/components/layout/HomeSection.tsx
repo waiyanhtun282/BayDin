@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useStateContext } from "../../context/StateContext";
 
 const HomeSection = () => {
-  const {  filterques,bayDinQures } = useStateContext();
+  const {  filterques } = useStateContext();
   // console.log(bayDinQures);
 
   return (
@@ -19,7 +19,10 @@ const HomeSection = () => {
           </tr>
         </thead>
         <tbody>
-          {filterques?.map((ques) => (
+          {filterques?.map((ques:{
+            questionNo:string;
+            questionName:string;
+          }) => (
             <tr
               className="  py-5 border-b-2   border-[#f4e9e9] hover:bg-[#f4f3f1] "
               key={ques.questionNo}

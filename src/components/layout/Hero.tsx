@@ -1,4 +1,3 @@
-import React from "react";
 import BayDin from "../../assets/mintheinkha_logo.png";
 
 const Hero = () => {

@@ -1,7 +1,14 @@
+import React from "react"
 
-const Input = (props) => {
+interface InputProps {
+  value:string;
+  onChange:(event:React.ChangeEvent<HTMLInputElement>)=>void;
+ className?:string
+}
+
+const Input:React.FC<InputProps> = ({value,onChange,className}) => {
   return (
-         <input  value={props.ref} onChange={props.onChange}   className={props.className} />
+         <input  value={value} onChange={onChange}   className={className} />
       
   )
 }

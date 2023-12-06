@@ -1,4 +1,8 @@
-const Nav = ({children}) => {
+import { ReactNode } from "react";
+
+const Nav = ({children}:{
+  children:ReactNode
+}) => {
   return (
    <div>
      <nav className="bg-[#e1dede]   container  py-5">

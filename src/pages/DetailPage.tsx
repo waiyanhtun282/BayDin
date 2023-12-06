@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import Button from "../common/buttton/Button";
 import Card from "../components/card/Card";
 import { useStateContext } from "../context/StateContext";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const DetailPage = () => {
   const { bayDinQures ,setDetailId ,detailId} = useStateContext();
@@ -11,7 +11,7 @@ const DetailPage = () => {
   // console.log(typeof(id))
   
   useEffect(() =>{
-    const quesNo = bayDinQures.questions?.filter(
+    const quesNo = bayDinQures?.questions?.filter(
       (ques) => ques.questionNo === Number(id)
     );
     setDetailId(quesNo)

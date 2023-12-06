@@ -3,17 +3,22 @@ import Button from "../common/buttton/Button";
 import { useStateContext } from "../context/StateContext";
 
 const AnswerPage = () => {
-  const { id } = useParams();
+  const { id } = useParams<{id:string}>();
   console.log(id);
+  const questionId= parseInt(id,10);
 
   const { bayDinQures, detailId  } = useStateContext();
   // console.log(detailId);
   const questionDetail = detailId && detailId.length > 0 ? detailId[0] : null;
 
   console.log(questionDetail);
-  const answer = bayDinQures.answers?.find(
-    (ans) => {
-      return( (ans.answerNo === Number(id)) && (ans.questionNo === questionDetail.questionNo))
+  const answer = bayDinQures?.answers?.find(
+    (ans:{
+      answerNo:string;
+      questionNo:string;
+      
+    }) => {
+      return( (ans.answerNo === questionId) && (ans.questionNo === questionDetail?.questionNo))
     }
   );
   //  console.log(answer);

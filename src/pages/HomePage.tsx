@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React from "react";
 import Input from "../common/input/Input";
 import HomeSection from "../components/layout/HomeSection";
 import { useStateContext } from "../context/StateContext";
@@ -6,7 +6,7 @@ import { useStateContext } from "../context/StateContext";
 const HomePage = () => {
   const { search ,setSearch} =useStateContext();
   
-  const handleChange = (e) =>{
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
     setSearch(e.target.value);
   }
   return (
